@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Book Store - Serverless Book store Intro - Writing Lambda functions :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1701083227" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701083227" rel="stylesheet">
-    <link href="/css/hybrid.css?1701083227" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701083227" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701083227" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701083227" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701083227" rel="stylesheet">
-    <link href="/css/theme.css?1701083227" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701083227" rel="stylesheet">
+    <link href="/css/nucleus.css?1708404638" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1708404638" rel="stylesheet">
+    <link href="/css/hybrid.css?1708404638" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1708404638" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1708404638" rel="stylesheet">
+    <link href="/css/auto-complete.css?1708404638" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1708404638" rel="stylesheet">
+    <link href="/css/theme.css?1708404638" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1708404638" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701083227" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1708404638" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701083227"></script>
+    <script src="/js/jquery-3.3.1.min.js?1708404638"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701083227"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701083227"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1708404638"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1708404638"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701083227"></script>
+<script type="text/javascript" src="/js/search.js?1708404638"></script>
 
     
   </div>
@@ -502,14 +502,14 @@
 <p>This is a series learning about Serverless in AWS. AWS provides technologies for running code, managing data, and integrating applications, all without managing servers. Those technologies serve users to create applications under the Serverless model. Serverless applications start with AWS Lambda, save data with DynamoDB, receive user requests with API Gateway, host static web with S3/AWS Amplify Console, &hellip;.</p>
 <p>In this series, you will start the first step to build a book store web application with Serverless services of AWS. This application allows user to register, log in, list all books, and add them to cart. Then, user can check the basket and checkout. For admin user, they can add, delete, edit the book information, manage and process the orders. The below list is all workshops of this series:</p>
 <ul>
-<li><a href="https://000078.awsstudygroup.com">Giới thiệu Serverless Book Store - Viết Lambda Functions</a></li>
-<li><a href="https://000079.awsstudygroup.com">Gọi API từ Front-end</a></li>
-<li><a href="https://000080.awsstudygroup.com">Triển khai ứng dụng với SAM (Serverless Application Model)</a></li>
-<li><a href="https://000081.awsstudygroup.com">Xác thực AWS Cognito</a></li>
-<li><a href="https://000082.awsstudygroup.com">Cài đặt ACM, Route 53 và CloudFront</a></li>
-<li><a href="https://000083.awsstudygroup.com">Đặt hàng với SQS và SNS</a></li>
-<li><a href="https://000084.awsstudygroup.com">Triển khai CI/CD với CodePipeline</a></li>
-<li><a href="https://000083.awsstudygroup.com">Theo dõi và giám sát với XRay và CloudWatch</a></li>
+<li><a href="https://000078.awsstudygroup.com">Introduce Serverless Book Store - Write Lambda Functions</a></li>
+<li><a href="https://000079.awsstudygroup.com">Call API from Front-end</a></li>
+<li><a href="https://000080.awsstudygroup.com">Deploy applications with SAM (Serverless Application Model)</a></li>
+<li><a href="https://000081.awsstudygroup.com">Authentication with AWS Cognito</a></li>
+<li><a href="https://000082.awsstudygroup.com">Set up ACM, Route 53 and CloudFront</a></li>
+<li><a href="https://000083.awsstudygroup.com">Checkout with SQS and SNS</a></li>
+<li><a href="https://000084.awsstudygroup.com">Deploy CI/CD with CodePipeline</a></li>
+<li><a href="https://000083.awsstudygroup.com">Tracing and monitor with XRay and CloudWatch</a></li>
 </ul>
 <p>The below is the overall architecture of the Book Store application:</p>
 <p><img src="/images/serverless-diagram.png" alt="SeverlessExample"></p>
@@ -743,19 +743,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701083227"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701083227"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701083227"></script>
-    <script src="/js/jquery.sticky.js?1701083227"></script>
-    <script src="/js/featherlight.min.js?1701083227"></script>
-    <script src="/js/highlight.pack.js?1701083227"></script>
+    <script src="/js/clipboard.min.js?1708404638"></script>
+    <script src="/js/perfect-scrollbar.min.js?1708404638"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1708404638"></script>
+    <script src="/js/jquery.sticky.js?1708404638"></script>
+    <script src="/js/featherlight.min.js?1708404638"></script>
+    <script src="/js/highlight.pack.js?1708404638"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701083227"></script>
-    <script src="/js/learn.js?1701083227"></script>
-    <script src="/js/hugo-learn.js?1701083227"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1708404638"></script>
+    <script src="/js/learn.js?1708404638"></script>
+    <script src="/js/hugo-learn.js?1708404638"></script>
 
-    <link href="/mermaid/mermaid.css?1701083227" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701083227"></script>
+    <link href="/mermaid/mermaid.css?1708404638" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1708404638"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
