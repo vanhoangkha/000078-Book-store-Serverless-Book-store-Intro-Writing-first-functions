@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Ghi dữ liệu với Lambda function :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1708405463" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1708405463" rel="stylesheet">
-    <link href="/css/hybrid.css?1708405463" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1708405463" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1708405463" rel="stylesheet">
-    <link href="/css/auto-complete.css?1708405463" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1708405463" rel="stylesheet">
-    <link href="/css/theme.css?1708405463" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1708405463" rel="stylesheet">
+    <link href="/css/nucleus.css?1715873478" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1715873478" rel="stylesheet">
+    <link href="/css/hybrid.css?1715873478" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1715873478" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1715873478" rel="stylesheet">
+    <link href="/css/auto-complete.css?1715873478" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1715873478" rel="stylesheet">
+    <link href="/css/theme.css?1715873478" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1715873478" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1708405463" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1715873478" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1708405463"></script>
+    <script src="/js/jquery-3.3.1.min.js?1715873478"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1708405463"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1708405463"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1715873478"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1715873478"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1708405463"></script>
+<script type="text/javascript" src="/js/search.js?1715873478"></script>
 
     
   </div>
@@ -318,7 +318,7 @@
   
     
     <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/" title="Ghi dữ liệu với Lambda function" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -457,7 +457,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-02-2024</font></i>
+        <i><font color=orange>17-05-2024</font></i>
     </left>
     <left>
         <br>
@@ -510,7 +510,7 @@
             
           
           
-            <a href='/vi/'>Book Store - Giới thiệu Serverless Book store - Viết Lambda function</a> > <a href='/vi/3-write-data-to-dynaomodb/'>Ghi dữ liệu vào DynamoDB</a> > Ghi dữ liệu với Lambda function
+            <a href='/vi/'>Serverless - Lambda tương tác với S3 và DynamoDB</a> > <a href='/vi/3-write-data-to-dynaomodb/'>Ghi dữ liệu vào DynamoDB</a> > Ghi dữ liệu với Lambda function
           
         
           
@@ -548,109 +548,131 @@
 
 
 	<ol>
-<li>Mở bảng điều khiển <a href="https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/discover">AWS Lambda</a> 
-<img src="/images/2-1-create-lambda-function/2-1-create-lambda-function-1.png?featherlight=false&amp;width=90pc" alt="LambdaConsole"></li>
-<li>Ấn nút <strong>Create function</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-1.png?featherlight=false&amp;width=90pc" alt="CreateFunction"></li>
-<li>Nhập tên cho function: <strong>book_create</strong></li>
-</ol>
+<li>
+<p>Mở bảng điều khiển <a href="https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/discover">AWS Lambda</a>, sau đó nhấn nút <strong>Create function</strong>
+<img src="/images/1/40.png?width=90pc" alt="LambdaConsole"></p>
+</li>
+<li>
+<p>Nhập tên cho function: <strong>book_create</strong></p>
 <ul>
-<li>Chọn <strong>Python 3.9</strong> cho mục <strong>Runtime</strong></li>
+<li>Chọn <strong>Python 3.11</strong> cho mục1 <strong>Runtime</strong></li>
 <li>Ấn nút <strong>Create function</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-2.png?featherlight=false&amp;width=90pc" alt="CreateFunction"></li>
+<img src="/images/1/41.png?width=90pc" alt="LambdaConsole"></li>
 </ul>
-<ol start="4">
-<li>Sao chép đoạn code dưới đây vào tab <strong>lambda_function</strong></li>
-</ol>
-<pre tabindex="0"><code>import boto3
-import json
+</li>
+<li>
+<p>Sao chép đoạn code dưới đây vào tab <strong>lambda_function</strong>
+```
+import boto3
+import json</p>
+<pre><code> client = boto3.resource('dynamodb')
 
-client = boto3.resource(&#39;dynamodb&#39;)
-    
-def lambda_handler(event, context):
-    
-    book_item = event[&#34;body&#34;]
-    error = None
-    try:
-        table = client.Table(&#39;Books&#39;)
-        table.put_item(Item = book_item)
-    except Exception as e:
-        error = e
-        
-    if error is None:
-        response = {
-            &#39;statusCode&#39;: 200,
-            &#39;body&#39;: &#39;writing to dynamoDB successfully!&#39;,
-            &#39;headers&#39;: {
-                &#39;Content-Type&#39;: &#39;application/json&#39;
-            },
-        }
-    else:
-        response = {
-            &#39;statusCode&#39;: 400,
-            &#39;body&#39;: &#39;writing to dynamoDB fail!&#39;,
-            &#39;headers&#39;: {
-                &#39;Content-Type&#39;: &#39;application/json&#39;
-            },
-        }
-  
-    return response
-</code></pre><ul>
-<li>Ấn nút <strong>Deploy</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-3.png?featherlight=false&amp;width=90pc" alt="AttachPolicies"></li>
-</ul>
-<ol start="5">
-<li>Tiếp theo, thêm quyền truy cập cho Lambda vào DynamoDB</li>
-</ol>
+ def lambda_handler(event, context):
+
+     book_item = event[&quot;body&quot;]
+     error = None
+     try:
+         table = client.Table('Books')
+         table.put_item(Item = book_item)
+     except Exception as e:
+         error = e
+
+     if error is None:
+         response = {
+             'statusCode': 200,
+             'body': 'writing to dynamoDB successfully!',
+             'headers': {
+                 'Content-Type': 'application/json'
+             },
+         }
+     else:
+         response = {
+             'statusCode': 400,
+             'body': 'writing to dynamoDB fail!',
+             'headers': {
+                 'Content-Type': 'application/json'
+             },
+         }
+
+     return response
+ ```
+</code></pre>
 <ul>
-<li>Ấn sang tab <strong>Configure</strong></li>
-<li>Chọn mục <strong>Permissions</strong> phía bên trái</li>
-<li>Ấn vào role mà function đang thực hiện
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-9.png?featherlight=false&amp;width=90pc" alt="AttachPolicies"></li>
-<li>Ấn nút <strong>Attach permissions</strong></li>
-<li>Chọn mục <strong>Attach policies</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-10.png?featherlight=false&amp;width=90pc" alt="AttachPolicies"></li>
-<li>Nhập <strong>dynamoDB</strong> để tìm policy thích hợp.</li>
-<li>Tích chọn policy: <strong>AmazonDynamoDBFullAccess</strong></li>
-<li>Ấn nút <strong>Attach policies</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-11.png?featherlight=false&amp;width=90pc" alt="AttachPolicies"></li>
+<li>Ấn nút <strong>Deploy</strong>
+<img src="/images/1/42.png?width=90pc" alt="LambdaConsole"></li>
 </ul>
-<ol start="6">
-<li>Tạo sự kiện để kiểm tra hoạt động của function</li>
-</ol>
+</li>
+<li>
+<p>Tiếp theo, thêm quyền truy cập cho Lambda vào DynamoDB</p>
+<ul>
+<li>
+<p>Ấn sang tab <strong>Configure</strong></p>
+</li>
+<li>
+<p>Chọn mục <strong>Permissions</strong> phía bên trái</p>
+</li>
+<li>
+<p>Ấn vào role mà function đang thực hiện
+<img src="/images/1/43.png?width=90pc" alt="LambdaConsole"></p>
+</li>
+<li>
+<p>Ấn nút <strong>Attach permissions</strong></p>
+</li>
+<li>
+<p>Chọn mục <strong>Attach policies</strong>
+<img src="/images/1/44.png?width=90pc" alt="LambdaConsole"></p>
+</li>
+<li>
+<p>Nhập <strong>dynamoDB</strong> để tìm policy thích hợp.</p>
+</li>
+<li>
+<p>Tích chọn policy: <strong>AmazonDynamoDBFullAccess</strong></p>
+</li>
+<li>
+<p>Ấn nút <strong>Add permision</strong>
+<img src="/images/1/45.png?width=90pc" alt="LambdaConsole"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tạo sự kiện để kiểm tra hoạt động của function</p>
 <ul>
 <li>Ấn sang tab <strong>Test</strong></li>
 <li>Nhập tên cho sự kiện, ví dụ: <strong>test_1</strong></li>
-<li>Nhập đoạn dữ liệu sau vào <strong>Event JSON</strong></li>
-</ul>
+<li>Nhập đoạn dữ liệu sau vào <strong>Event JSON</strong>
 <pre tabindex="0"><code>{
-  &#34;body&#34;: {
+&#34;body&#34;: {
     &#34;id&#34;: &#34;1&#34;,
     &#34;name&#34;: &#34;Java&#34;,
     &#34;author&#34;: &#34;Alex&#34;,
     &#34;category&#34;: &#34;IT&#34;,
     &#34;price&#34;: &#34;10.89&#34;,
     &#34;description&#34;: &#34;This book guide to create Java web basic&#34;,
-    &#34;image&#34;: &#34;https://book-image-resize-store.s3.ap-southeast-2.amazonaws.com/Java.jpg&#34;
-  }
+    &#34;image&#34;: &#34;https://book-image-resize-store.s3.us-east-1.amazonaws.com/Java.jpg&#34;
 }
-</code></pre><ul>
+}
+</code></pre></li>
 <li>Ấn nút <strong>Save</strong></li>
 <li>Ấn nút <strong>Test</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-12.png?featherlight=false&amp;width=90pc" alt="CreateTestEvent"></li>
+<img src="/images/1/46.png?width=90pc" alt="LambdaConsole"></li>
 </ul>
-<ol start="7">
-<li>Điều hướng đến bảng điều khiển DynamoDB</li>
-</ol>
+</li>
+<li>
+<p>Điều hướng đến bảng điều khiển <strong>DynamoDB Tables</strong></p>
 <ul>
-<li>Chọn mục <strong>Update settings</strong> menu phía bên trái</li>
-<li>Tích chọn bảng <strong>Books</strong></li>
-<li>Ấn nút <strong>Explore table items</strong>
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-13.png?featherlight=false&amp;width=90pc" alt="CheckTable"></li>
+<li>Chọn <strong>Books Tables</strong></li>
+<li>Click <strong>Actions</strong> sau đó chọn <strong>Update settings</strong>
+<img src="/images/1/47.png?width=90pc" alt="LambdaConsole"></li>
 </ul>
-<ol start="8">
-<li>Bạn sẽ nhận được tất cả các dữ liệu của bảng.
-<img src="/images/3-write-data-to-dynaomodb/3-write-data-to-dynaomodb-14.png?featherlight=false&amp;width=90pc" alt="CheckTable"></li>
+</li>
+<li>
+<p>Click <strong>Explore table items</strong>
+<img src="/images/1/48.png?width=90pc" alt="LambdaConsole"></p>
+</li>
+<li>
+<p>Bạn sẽ nhận được tất cả các dữ liệu của bảng.
+<img src="/images/1/49.png?width=90pc" alt="LambdaConsole"></p>
+</li>
 </ol>
 
 
@@ -884,19 +906,19 @@ def lambda_handler(event, context):
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1708405463"></script>
-    <script src="/js/perfect-scrollbar.min.js?1708405463"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1708405463"></script>
-    <script src="/js/jquery.sticky.js?1708405463"></script>
-    <script src="/js/featherlight.min.js?1708405463"></script>
-    <script src="/js/highlight.pack.js?1708405463"></script>
+    <script src="/js/clipboard.min.js?1715873478"></script>
+    <script src="/js/perfect-scrollbar.min.js?1715873478"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1715873478"></script>
+    <script src="/js/jquery.sticky.js?1715873478"></script>
+    <script src="/js/featherlight.min.js?1715873478"></script>
+    <script src="/js/highlight.pack.js?1715873478"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1708405463"></script>
-    <script src="/js/learn.js?1708405463"></script>
-    <script src="/js/hugo-learn.js?1708405463"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1715873478"></script>
+    <script src="/js/learn.js?1715873478"></script>
+    <script src="/js/hugo-learn.js?1715873478"></script>
 
-    <link href="/mermaid/mermaid.css?1708405463" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1708405463"></script>
+    <link href="/mermaid/mermaid.css?1715873478" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1715873478"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
