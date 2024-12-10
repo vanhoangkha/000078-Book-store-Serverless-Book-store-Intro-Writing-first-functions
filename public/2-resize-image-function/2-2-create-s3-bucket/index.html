@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create S3 bucket :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1715873478" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1715873478" rel="stylesheet">
-    <link href="/css/hybrid.css?1715873478" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1715873478" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1715873478" rel="stylesheet">
-    <link href="/css/auto-complete.css?1715873478" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1715873478" rel="stylesheet">
-    <link href="/css/theme.css?1715873478" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1715873478" rel="stylesheet">
+    <link href="/css/nucleus.css?1733814907" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733814907" rel="stylesheet">
+    <link href="/css/hybrid.css?1733814907" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733814907" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733814907" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733814907" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733814907" rel="stylesheet">
+    <link href="/css/theme.css?1733814907" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733814907" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1715873478" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733814907" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1715873478"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733814907"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1715873478"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1715873478"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733814907"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733814907"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1715873478"></script>
+<script type="text/javascript" src="/js/search.js?1733814907"></script>
 
     
   </div>
@@ -457,7 +457,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>17-05-2024</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -555,7 +555,7 @@
 <ol>
 <li>
 <p>Open <a href="https://s3.console.aws.amazon.com/s3/get-started?region=us-east-1">Amazon S3 console</a>, then Click <strong>Create bucket</strong>
-<img src="/images/1/8.png?featherlight=false&amp;width=90pc" alt="S3Console"></p>
+<img alt="S3Console" src="/images/1/8.png?featherlight=false&width=90pc"></p>
 </li>
 <li>
 <p>General configuration</p>
@@ -565,12 +565,12 @@
 <li>Choose <strong>ACLs disabled</strong></li>
 <li>Uncheck access block: <strong>Block all public access</strong></li>
 <li>Check the box: <strong>I acknowledge that the current settings might result in this bucket and the objects within becoming public</strong>
-<img src="/images/1/9.png?featherlight=false&amp;width=90pc" alt="S3Console"></li>
+<img alt="S3Console" src="/images/1/9.png?featherlight=false&width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Click <strong>Create bucket</strong>
-<img src="/images/1/10.png?featherlight=false&amp;width=90pc" alt="S3Console"></p>
+<img alt="S3Console" src="/images/1/10.png?featherlight=false&width=90pc"></p>
 </li>
 <li>
 <p>To create bucket - <strong>book-image-resize-stores</strong>, repeat steps 1 to 5.</p>
@@ -579,12 +579,12 @@
 <p>After creating the two buckets, we add the trigger for the lambda function created earlier</p>
 <ul>
 <li>Click <strong>Add Trigger</strong>
-<img src="/images/1/11.png?featherlight=false&amp;width=90pc" alt="S3Console"></li>
+<img alt="S3Console" src="/images/1/11.png?featherlight=false&width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Enter <strong>S3</strong> and select <strong>S3</strong> service
-<img src="/images/1/12.png?featherlight=false&amp;width=90pc" alt="S3Console"></p>
+<img alt="S3Console" src="/images/1/12.png?featherlight=false&width=90pc"></p>
 </li>
 <li>
 <p>Select bucket that trigger lambda, <strong>book-image-stores</strong></p>
@@ -592,12 +592,12 @@
 <li>Select <strong>All objectcreate events</strong> for <strong>Event type</strong></li>
 <li>Check the box - <strong>I acknowledge that using&hellip;.</strong> as shown below</li>
 <li>Click <strong>Add</strong>
-<img src="/images/1/13.png?featherlight=false&amp;width=90pc" alt="S3Console"></li>
+<img alt="S3Console" src="/images/1/13.png?featherlight=false&width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Check result after add trigger for Lambda function
-<img src="/images/1/14.png?featherlight=false&amp;width=90pc" alt="S3Console"></p>
+<img alt="S3Console" src="/images/1/14.png?featherlight=false&width=90pc"></p>
 </li>
 </ol>
 
@@ -832,19 +832,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1715873478"></script>
-    <script src="/js/perfect-scrollbar.min.js?1715873478"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1715873478"></script>
-    <script src="/js/jquery.sticky.js?1715873478"></script>
-    <script src="/js/featherlight.min.js?1715873478"></script>
-    <script src="/js/highlight.pack.js?1715873478"></script>
+    <script src="/js/clipboard.min.js?1733814907"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733814907"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733814907"></script>
+    <script src="/js/jquery.sticky.js?1733814907"></script>
+    <script src="/js/featherlight.min.js?1733814907"></script>
+    <script src="/js/highlight.pack.js?1733814907"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1715873478"></script>
-    <script src="/js/learn.js?1715873478"></script>
-    <script src="/js/hugo-learn.js?1715873478"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733814907"></script>
+    <script src="/js/learn.js?1733814907"></script>
+    <script src="/js/hugo-learn.js?1733814907"></script>
 
-    <link href="/mermaid/mermaid.css?1715873478" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1715873478"></script>
+    <link href="/mermaid/mermaid.css?1733814907" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733814907"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
