@@ -1,24 +1,52 @@
 ---
-title : "Introduction"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
-pre : " <b> 1. </b> "
+title: "Introduction"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: " <b> 1. </b> "
 ---
+
 #### Overview
 
-Before starting to write the first Lambda function, let's learn through the concept of Serverless, and Lambda.
+Before diving into creating your first Lambda function, let's explore the fundamental concepts of Serverless computing and AWS Lambda.
 
-#### Serverless
+#### Serverless Computing
 
-Serverless is a basic concept that refers to a group of services that are fully managed by AWS. When using these services, you will not need to care about basic daily infrastructure administration tasks such as updating security patches, managing device portfolios, managing assets....
+Serverless computing represents a cloud-native development model where AWS fully manages the underlying infrastructure. This approach eliminates the need for traditional infrastructure management tasks such as:
 
-There are many services planned into the Serverless cluster on AWS such as serverless databases like Aurora Serverless, Redshift Serverless, serverless compute like AWS Lambda.
+* Operating system maintenance and security patching
+* Capacity planning and resource provisioning
+* Hardware monitoring and scaling
+* Infrastructure availability management
+
+AWS offers a comprehensive suite of serverless services, including:
+
+* Compute: AWS Lambda
+* Databases: Amazon Aurora Serverless v2, Amazon DynamoDB, Amazon Redshift Serverless
+* Analytics: Amazon Athena, Amazon Kinesis Data Analytics
+* Application Integration: Amazon EventBridge, Amazon SQS, Amazon SNS
 
 #### AWS Lambda
 
-Lambda is a serverless compute service that allows you to run applications without initializing or managing servers. Lambda runs on a highly available infrastructure platform and does all of the compute resource management, including server and operating system maintenance, capacity provisioning, auto-scaling, and logging. . With Lambda, you can develop almost any kind of backend application or service.
+AWS Lambda is a serverless compute service that executes your code in response to events without requiring server provisioning or management. Key features include:
 
-You organize your application into **Lambda functions**. Lambda functions run only when needed and are capable of automatically scaling, from a few requests per day to thousands per second. You only pay for the compute time you use — AWS won't charge when your application is not running.
+* Automatic scaling from zero to thousands of concurrent executions
+* Built-in high availability and fault tolerance
+* Pay-per-use pricing model (you only pay for compute time consumed)
+* Support for multiple programming languages including Node.js, Python, Java, Go, and .NET
+* Native integration with other AWS services
+* Configurable memory allocation from 128MB to 10GB
+* Maximum execution duration of 15 minutes
 
-We'll also start our Serverless Journey with a Lambda function that first resizes the image after uploading it to the S3 bucket, saves the edited image to a new S3 bucket, and deletes the old image.
+#### Practical Implementation
+
+In our upcoming hands-on exercise, we'll create a serverless image processing workflow that demonstrates Lambda's capabilities:
+
+* Automatically process images uploaded to an S3 bucket
+* Resize images using Lambda functions
+* Store processed images in a destination S3 bucket
+* Implement cleanup procedures for original files
+* Utilize environment variables for configuration
+* Implement error handling and logging
+
+This practical example will showcase Lambda's integration with other AWS services and demonstrate serverless application patterns.

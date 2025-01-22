@@ -1,63 +1,68 @@
----
-title : "Tạo Policy cho Lambda function"
-date : "`r Sys.Date()`"
-weight : 3
-chapter : false
-pre : " <b> 2.3 </b> "
----
-Trong bước này chúng ta sẽ tạo Policy cấp quyền cho Lambda function có thể lấy, ghi và xoá object trong S3 bucket.
 
-1. Ở trang **resize-image**.
-    - Ấn vào tab **Configuration**.
-    - Ấn vào **Permissions**.
-    - Ấn vào role mà function đang thực hiện.
+---
+title: "Tạo IAM Policy cho Lambda Function"
+date: "`r Sys.Date()`"
+weight: 3
+chapter: false
+pre: " <b> 2.3 </b> "
+---
+
+Trong phần này, chúng ta sẽ tạo IAM Policy để cấp quyền cho Lambda Function thực hiện các thao tác với objects trong S3 bucket.
+
+### Tạo IAM Policy
+
+1. Truy cập vào Lambda Function **resize-image**
+   - Chuyển đến tab **Configuration**
+   - Chọn mục **Permissions**
+   - Click vào role đang được gắn với function
 ![CreatePolicy](/images/temp/1/16.png?width=90pc)
 
-2. Ở trang **resize-image-role-...**.
-    - Ấn nút **Add permissions**.
-    - Chọn **Create inline policy**.
+2. Tại trang IAM Role **resize-image-role-...**
+   - Click **Add permissions**
+   - Chọn **Create inline policy**
 ![CreatePolicy](/images/temp/1/17.png?width=90pc)
 
-3. Ở trang **Step 1: Specify permissions**.
-    - Ấn vào **Choose a service** and nhập **S3**.
-    - Chọn **S3**.
-  ![CreatePolicy](/images/temp/1/18.png?width=90pc)
-    - Nhập **GetObject** ở ô Tìm kiếm.
-    - Chọn **GetObject** ở cấp **Read**.
-  ![CreatePolicy](/images/temp/1/19.png?width=90pc)
-    - Xóa ô tìm kiếm và nhập **DeleteObject**.
-    - Chọn **DeleteObject** ở cấp **Write**.
-    - Ấn vào **Add ARNs**.
-  ![CreatePolicy](/images/temp/1/20.png?width=90pc)
-    - Ở hộp thoại **Specify ARNs**. 
-      - Nhập **book-image-stores-by-myself** ở **Resource bucket name**.
-      - Nhập **\*** at **Resource object name**.
-      - Ấn vào nút **Add ARNs**.
-  ![CreatePolicy](/images/temp/1/21.png?width=90pc)
-    - Ấn vào **+ Add more permissions**.
-    - Ấn vào **Choose a service** và nhập **S3**.
-    - Chọn **S3**.
-  ![CreatePolicy](/images/temp/1/22.png?width=90pc)
-    - Nhập **PutObject**.
-    - Chọn **PutObject** ở cấp **Write**.
-    - Ấn vào **Add ARNs**.
-  ![CreatePolicy](/images/temp/1/23.png?width=90pc)
-    - Ở hộp thoại **Specify ARNs**. 
-      - Nhập **book-image-resize-stores-by-myself** ở **Resource bucket name**.
-      - Nhập **\*** ở **Resource object name**.
-      - Ấn vào nút **Add ARNs**.
-    - Sau khi hộp thoại đóng, ấn vào **Next**.
-  ![CreatePolicy](/images/temp/1/24.png?width=90pc)
+3. Tại trang **Create policy**
+   - Click **Choose a service** và tìm kiếm **S3**
+   - Chọn dịch vụ **S3**
+![CreatePolicy](/images/temp/1/18.png?width=90pc)
 
-4. Ở trang **Step 2: Review and create**.
-    - Nhập tên chính sách, ví dụ: **LambdaResizeImageS3Policy**.
-    - Kiểm tra lại thông tin chính sách và ấn vào **Create policy**.
+   - Tại ô tìm kiếm, nhập **GetObject**
+   - Tích chọn quyền **GetObject** trong nhóm **Read**
+![CreatePolicy](/images/temp/1/19.png?width=90pc)
+
+   - Xóa từ khóa tìm kiếm và nhập **DeleteObject**
+   - Tích chọn quyền **DeleteObject** trong nhóm **Write**
+   - Click **Add ARNs**
+![CreatePolicy](/images/temp/1/20.png?width=90pc)
+
+   - Trong hộp thoại **Specify ARNs**
+     - Điền **book-image-stores-by-myself** vào trường **Resource bucket name**
+     - Nhập **\*** vào trường **Resource object name**
+     - Click **Add ARNs**
+![CreatePolicy](/images/temp/1/21.png?width=90pc)
+
+   - Click **+ Add more permissions**
+   - Chọn lại service **S3**
+![CreatePolicy](/images/temp/1/22.png?width=90pc)
+
+   - Tìm và chọn quyền **PutObject** trong nhóm **Write**
+   - Click **Add ARNs**
+![CreatePolicy](/images/temp/1/23.png?width=90pc)
+
+   - Trong hộp thoại **Specify ARNs**
+     - Điền **book-image-resize-stores-by-myself** vào trường **Resource bucket name**
+     - Nhập **\*** vào trường **Resource object name**
+     - Click **Add ARNs**
+   - Click **Next**
+![CreatePolicy](/images/temp/1/24.png?width=90pc)
+
+4. Tại trang **Review policy**
+   - Đặt tên policy là **LambdaResizeImageS3Policy**
+   - Xem lại cấu hình policy và click **Create policy**
 ![CreatePolicy](/images/temp/1/25.png?width=90pc)
 
-5. Kiểm tra lại các chính sách đã tạo ra.
+5. Kiểm tra policy vừa được tạo trong danh sách
 ![CreatePolicy](/images/temp/1/26.png?width=90pc)
 
-Chúng ta đã hoàn thành cấp quyền đọc, ghi và xoá object trong S3 bucket cho Lambda function. Bước tiếp theo là kiểm tra hoạt động của Lambda fucntion khi tải lên một ảnh.
-
-
-
+Đến đây, chúng ta đã hoàn tất việc cấp quyền cho Lambda Function để thao tác với objects trong S3 bucket. Bước tiếp theo, chúng ta sẽ kiểm tra chức năng của Lambda Function bằng cách upload một file ảnh test.

@@ -1,22 +1,40 @@
 ---
-title : "Book store - Serverless Book store Intro - Writing first functions"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
+title: "Serverless Bookstore: Getting Started with AWS Lambda Functions"
+date: "2025-01-22"
+weight: 1
+chapter: false
 ---
-# Book store - Serverless Book store Intro - Writing first functions
 
-#### Overview
+# Serverless Bookstore: Getting Started with AWS Lambda Functions
 
-This is a series about Serverless. AWS provides technologies for running code, managing data, and integrating applications, all without managing servers. Those technologies serve users to create applications under the Serverless model. Serverless applications start with AWS Lambda, save data with DynamoDB, receive user requests with API Gateway, host static web with S3/AWS Amplify Console, ...
+## Overview
 
-Example of a web application using the Serverless model with the cloud:
+Welcome to this comprehensive guide on building serverless applications with AWS. Modern cloud architecture allows developers to create scalable applications without managing traditional server infrastructure. AWS provides a robust ecosystem of serverless technologies, including:
 
-![ServerlessExample](/images/Arch-Diagrams_Serverless-Category-Page_WebApp.png?featherlight=false&width=90pc)
+- **AWS Lambda** for executing code
+- **Amazon DynamoDB** for data persistence
+- **Amazon API Gateway** for handling API requests
+- **Amazon S3** and **AWS Amplify** for static web hosting
 
-In the first post of this series, we'll learn the basics of Serverless and practice creating functions with Lambda that are triggered from S3 and write data to a DynamoDB table.
-#### Content
+Here's how these components work together in a typical serverless web application:
 
- 1. [Introduction](1-introduce/)
- 2. [Create Lambda function to resize images](2-resize-image-function/)
- 3. [Create Lambda function to write data to DynamoDB](3-write-data-to-dynaomodb/)
+![Serverless Architecture Diagram](/images/Arch-Diagrams_Serverless-Category-Page_WebApp.png?featherlight=false&width=90pc)
+
+This first guide in our serverless series focuses on fundamental concepts and hands-on practice. You'll learn to create AWS Lambda functions that interact with S3 triggers and store data in DynamoDB tables.
+
+## Table of Contents
+
+1. [Understanding Serverless Architecture](1-introduce/)
+   - Core concepts
+   - Benefits and use cases
+   - AWS serverless services overview
+
+2. [Building an Image Processing Function](2-resize-image-function/)
+   - Creating Lambda functions
+   - Handling S3 events
+   - Image processing with Lambda
+
+3. [Implementing Data Persistence](3-write-data-to-dynaomodb/)
+   - DynamoDB basics
+   - Writing data from Lambda
+   - Best practices for data modeling

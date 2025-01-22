@@ -1,22 +1,26 @@
 ---
-title : "Create DynamoDB table"
-date :  "`r Sys.Date()`" 
-weight : 1
-chapter : false
-pre : " <b> 3.1 </b> "
+title: "Creating a DynamoDB Table"
+date: "2025-01-22"
+weight: 1
+chapter: false
+pre: "<b> 3.1 </b>"
 ---
-1. Open [DynamoDB console](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#dashboard), then Click **Create table**.
-![DynamoDBConsole](/images/temp/1/35.png?width=90pc)
 
-2. Enter table name: **Books**.
-    - Enter partition key: **id**.
-![DynamoDBConsole](/images/temp/1/36.png?width=90pc)
 
-3. Scroll down to **Table settings** pattern, select **Customize settings**.
-    - In **Table class** pattern, select **DynamoDB Standard**.
-    - In **Read/write capacity setting** pattern, select **On-demand**.
-![DynamoDBConsole](/images/temp/1/37.png?width=90pc)
+Follow these steps to create a new DynamoDB table:
 
-4. Scroll down, leave as default and click **Create table**.
-![DynamoDBConsole](/images/temp/1/38.png?width=90pc)
+1. Navigate to the [DynamoDB console](https://console.aws.amazon.com/dynamodb) and select **Create table** from the navigation pane.
+   ![DynamoDB Console Create Table](/images/temp/1/35.png?width=90pc)
 
+2. Configure the table basics:
+   - For **Table name**, enter `Books`
+   - For **Partition key**, enter `id` (this will be your primary key)
+   ![DynamoDB Table Configuration](/images/temp/1/36.png?width=90pc)
+
+3. Under **Table settings**, select **Customize settings** and configure:
+   - **Table class**: Choose `DynamoDB Standard`
+   - **Capacity mode**: Select `On-demand` (this provides pay-per-request pricing)
+   ![DynamoDB Table Settings](/images/temp/1/37.png?width=90pc)
+
+4. Review your configuration settings. Keep all other options at their default values and select **Create table** to provision your DynamoDB table.
+   ![DynamoDB Create Table Review](/images/temp/1/38.png?width=90pc)

@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Ghi dữ liệu vào DynamoDB :: AWS System Manager</title>
+    <title>Ghi dữ liệu vào Amazon DynamoDB :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1737533814" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1737533814" rel="stylesheet">
-    <link href="/css/hybrid.css?1737533814" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1737533814" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1737533814" rel="stylesheet">
-    <link href="/css/auto-complete.css?1737533814" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1737533814" rel="stylesheet">
-    <link href="/css/theme.css?1737533814" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1737533814" rel="stylesheet">
+    <link href="/css/nucleus.css?1737536555" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1737536555" rel="stylesheet">
+    <link href="/css/hybrid.css?1737536555" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1737536555" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1737536555" rel="stylesheet">
+    <link href="/css/auto-complete.css?1737536555" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1737536555" rel="stylesheet">
+    <link href="/css/theme.css?1737536555" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1737536555" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1737533814" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1737536555" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1737533814"></script>
+    <script src="/js/jquery-3.3.1.min.js?1737536555"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -79,14 +79,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1737533814"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1737533814"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1737536555"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1737536555"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1737533814"></script>
+<script type="text/javascript" src="/js/search.js?1737536555"></script>
 
     
   </div>
@@ -104,13 +104,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/">
-           <b> 1. </b> Giới thiệu
+           <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -130,13 +130,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/" title="Thay đổi kích thước ảnh" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/" title="Xử lý và Tối ưu Kích thước Ảnh trên AWS" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/">
-           <b> 2. </b> Thay đổi kích thước ảnh
+          <b> 2. </b>Xử lý và Tối ưu Kích thước Ảnh trên AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -161,13 +161,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-1-create-lambda-function/" title="Tạo Lambda function chỉnh ảnh" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-1-create-lambda-function/" title="Tạo Lambda Function Xử Lý Ảnh" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-1-create-lambda-function/">
-           <b> 2.1 </b> Tạo Lambda function chỉnh ảnh
+          <b> 2.1 </b>Tạo Lambda Function Xử Lý Ảnh
           
             <i class="fas fa-check read-icon"></i>
           
@@ -189,13 +189,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 bucket" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 Bucket" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-2-create-s3-bucket/">
-           <b> 2.2 </b> Tạo S3 bucket
+           <b> 2.2 </b> Tạo S3 Bucket
           
             <i class="fas fa-check read-icon"></i>
           
@@ -217,13 +217,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-3-create-policy-access-s3/" title="Tạo Policy cho Lambda function" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-3-create-policy-access-s3/" title="Tạo IAM Policy cho Lambda Function" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-3-create-policy-access-s3/">
-           <b> 2.3 </b> Tạo Policy cho Lambda function
+           <b> 2.3 </b> Tạo IAM Policy cho Lambda Function
           
             <i class="fas fa-check read-icon"></i>
           
@@ -245,13 +245,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda function" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda Function" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-4-test-lambda-function/">
-           <b> 2.4 </b> Kiểm tra hoạt động của Lambda function
+           <b> 2.4 </b> Kiểm tra hoạt động của Lambda Function
           
             <i class="fas fa-check read-icon"></i>
           
@@ -280,13 +280,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/" title="Ghi dữ liệu vào DynamoDB" class="dd-item 
-        
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/" title="Ghi dữ liệu vào Amazon DynamoDB" class="dd-item 
+        parent
         active
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/">
-           <b> 3. </b> Ghi dữ liệu vào DynamoDB
+           <b> 3. </b> Ghi dữ liệu vào Amazon DynamoDB
           
             <i class="fas fa-check read-icon"></i>
           
@@ -311,13 +311,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo bảng trong AWS DynamoDB" class="dd-item 
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo và Quản lý Bảng trong AWS DynamoDB" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/">
-           <b> 3.1 </b> Tạo bảng trong AWS DynamoDB
+          <b> 3.1 </b>Tạo và Quản lý Bảng trong AWS DynamoDB
           
             <i class="fas fa-check read-icon"></i>
           
@@ -339,13 +339,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/" title="Ghi dữ liệu với Lambda function" class="dd-item 
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/" title="Tạo Lambda Function để Ghi dữ liệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/">
-           <b> 3.2 </b> Ghi dữ liệu với Lambda function
+          <b> 3.2 </b>Tạo Lambda Function để Ghi dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -482,7 +482,7 @@
   <br>
   <b> Last Updated </b> <br>
   <i>
-    <font color=orange>04-12-2024</font>
+    <font color=orange>22-01-2025</font>
   </i>
 </left>
 <left>
@@ -492,6 +492,7 @@
 
   <i> <a href="https://www.linkedin.com/in/jotaguy" style="color:orange">Gia Hưng </a> <br>
     <a href="https://www.linkedin.com/in/hạnh-phạm-725b7322a/" style="color:orange">Hạnh Phạm </a> <br>
+    <a href="https://www.linkedin.com/in/chaunguyenctn/" style="color:orange">Châu Nguyễn </a> <br>
 
   </i>
 </left>
@@ -531,7 +532,7 @@
             
           
           
-            <a href='/vi/'>Serverless - Lambda tương tác với S3 và DynamoDB</a> > Ghi dữ liệu vào DynamoDB
+            <a href='/vi/'>Serverless - Tương tác giữa Lambda với S3 và DynamoDB</a> > Ghi dữ liệu vào Amazon DynamoDB
           
         
           
@@ -546,7 +547,8 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#tổng-quan">Tổng quan</a></li>
+        <li><a href="#nội-dung">Nội dung</a></li>
       </ul>
     </li>
   </ul>
@@ -566,7 +568,7 @@
           
             <h1>
               
-              Ghi dữ liệu vào DynamoDB
+              Ghi dữ liệu vào Amazon DynamoDB
             </h1>
           
 
@@ -574,11 +576,28 @@
 
 
 
-	<p>Trong phần này chúng ta sẽ tạo một bảng với DynamoDB, sau đó tạo Lambda function bằng Python để ghi dữ liệu vào bảng đó.</p>
-<h4 id="nội-dung">Nội dung</h4>
+	<p>Trong phần này, chúng ta sẽ thực hiện việc tạo và quản lý dữ liệu với Amazon DynamoDB thông qua AWS Lambda function sử dụng Python. Chúng ta sẽ tìm hiểu cách xây dựng một giải pháp serverless để lưu trữ và xử lý dữ liệu một cách hiệu quả.</p>
+<h3 id="tổng-quan">Tổng quan</h3>
+<p>Amazon DynamoDB là một cơ sở dữ liệu NoSQL được quản lý hoàn toàn bởi AWS, cung cấp hiệu suất cao và khả năng mở rộng tự động. Kết hợp với AWS Lambda, chúng ta có thể xây dựng các ứng dụng serverless mạnh mẽ.</p>
+<h3 id="nội-dung">Nội dung</h3>
 <ol>
-<li><a href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/">Tạo bảng trong AWS DynamoDB</a></li>
-<li><a href="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/">Ghi dữ liệu với Lambda function</a></li>
+<li>
+<p><a href="3-1-create-dynamodb-table/">Khởi tạo và cấu hình bảng trong Amazon DynamoDB</a></p>
+<ul>
+<li>Thiết kế cấu trúc bảng</li>
+<li>Cấu hình partition key và sort key</li>
+<li>Thiết lập capacity mode</li>
+</ul>
+</li>
+<li>
+<p><a href="3-2-write-data-by-lambda/">Phát triển Lambda function để ghi dữ liệu</a></p>
+<ul>
+<li>Tạo Lambda function với Python runtime</li>
+<li>Cấu hình IAM role và permissions</li>
+<li>Triển khai logic ghi dữ liệu</li>
+<li>Kiểm thử và tối ưu hiệu suất</li>
+</ul>
+</li>
 </ol>
 
 
@@ -795,10 +814,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda function"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda Function"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo bảng trong AWS DynamoDB" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo và Quản lý Bảng trong AWS DynamoDB" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -808,19 +827,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1737533814"></script>
-    <script src="/js/perfect-scrollbar.min.js?1737533814"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1737533814"></script>
-    <script src="/js/jquery.sticky.js?1737533814"></script>
-    <script src="/js/featherlight.min.js?1737533814"></script>
-    <script src="/js/highlight.pack.js?1737533814"></script>
+    <script src="/js/clipboard.min.js?1737536555"></script>
+    <script src="/js/perfect-scrollbar.min.js?1737536555"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1737536555"></script>
+    <script src="/js/jquery.sticky.js?1737536555"></script>
+    <script src="/js/featherlight.min.js?1737536555"></script>
+    <script src="/js/highlight.pack.js?1737536555"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1737533814"></script>
-    <script src="/js/learn.js?1737533814"></script>
-    <script src="/js/hugo-learn.js?1737533814"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1737536555"></script>
+    <script src="/js/learn.js?1737536555"></script>
+    <script src="/js/hugo-learn.js?1737536555"></script>
 
-    <link href="/mermaid/mermaid.css?1737533814" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1737533814"></script>
+    <link href="/mermaid/mermaid.css?1737536555" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1737536555"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

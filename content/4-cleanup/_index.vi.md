@@ -1,34 +1,42 @@
+
 ---
-title : "Dọn dẹp tài nguyên"
-date :  "`r Sys.Date()`" 
-weight : 4
-chapter : false
-pre : " <b> 4. </b> "
+title: "Dọn dẹp tài nguyên"
+date: "`r Sys.Date()`"
+weight: 4
+chapter: false
+pre: " <b> 4. </b> "
 ---
-1. Xoá bảng trong DynamoDB.
-    - Mở bảng điều khiển của [DynamoDB](https://ap-southeast-2.console.aws.amazon.com/dynamodbv2/home?region=ap-southeast-2#dashboard).
-    - Chọn **Tables** ở menu phía bên trái.
-    - Chọn bảng **Books**.
-    - Ấn **Delete**.
-    - Nhập **confirm** và ấn **Delete table**.
-2. Xoá S3 bucket
-    - Mở bảng điều khiển của [S3](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-2).
-    - Chọn bucket **book-image-resize-stores-by-myself**.
-    - Ấn nút **Empty**.
-    - Nhập **permanently delete** và ấn **Empty**.
-    - Chọn bucket **book-image-resize-stores-by-myself**.
-    - Ấn nút **Delete**.
-    - Nhập **book-image-resize-stores-by-myself** và ấn **Delete**.
-    - Chọn bucket **book-image-stores-by-myself**.
-    - Ấn nút **Delete**.
-    - Nhập **book-image-stores-by-myself** và ấn **Delete**.
-3. Xoá Lambda function.
-    - Mở bảng điều khiển của [AWS Lambda](https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/functions).
-    - Chọn **book_create** function.
-    - Ấn **Actions**.
-    - Chọn **Delete**.
-    - Nhập **delete** và ấn **Delete**.
-    - Tương tự với **resize_image** function.
+
+### 1. Xóa DynamoDB Table
+
+Truy cập [AWS Management Console](https://console.aws.amazon.com) và thực hiện các bước sau:
+
+* Điều hướng đến dịch vụ DynamoDB và truy cập [DynamoDB Console](https://console.aws.amazon.com/dynamodbv2/home)
+* Trong thanh điều hướng bên trái, chọn mục **Tables**
+* Tìm và chọn bảng **Books** từ danh sách
+* Click vào nút **Delete** ở góc trên bên phải
+* Trong hộp thoại xác nhận, nhập `confirm` và chọn **Delete table**
+
+### 2. Xóa S3 Buckets
+
+Truy cập [S3 Console](https://console.aws.amazon.com/s3) và thực hiện:
+
+* Tìm bucket có tên **book-image-resize-stores-by-myself**
+* Chọn bucket và click nút **Empty**
+* Nhập `permanently delete` để xác nhận và chọn **Empty bucket**
+* Sau khi bucket trống, chọn **Delete**
+* Xác nhận bằng cách nhập tên bucket và chọn **Delete bucket**
+* Lặp lại quy trình tương tự với bucket **book-image-stores-by-myself**
+
+### 3. Xóa Lambda Functions
+
+Truy cập [Lambda Console](https://console.aws.amazon.com/lambda) và thực hiện:
+
+* Tìm function **book_create**
+* Click vào **Actions** và chọn **Delete**
+* Nhập `delete` để xác nhận và chọn **Delete function**
+* Lặp lại các bước trên với function **resize_image**
+
 {{% notice note %}}
-Nếu bạn tiếp tục với bài số 2 của series thì có thể bỏ qua bước xoá Lambda function.
+Nếu bạn dự định tiếp tục với phần 2 của series, bạn có thể bỏ qua việc xóa Lambda functions.
 {{% /notice %}}

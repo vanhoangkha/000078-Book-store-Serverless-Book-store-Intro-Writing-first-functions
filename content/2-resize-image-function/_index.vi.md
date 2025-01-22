@@ -1,15 +1,45 @@
 ---
-title : "Thay đổi kích thước ảnh"
-date :  "`r Sys.Date()`" 
-weight : 2 
-chapter : false
-pre : " <b> 2. </b> "
+title: "Xử lý và Tối ưu Kích thước Ảnh trên AWS"
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: "<b> 2. </b>"
 ---
-Trong phần này chúng ta sẽ tạo 1 Lambda Nodejs function để thay đổi kích thước ảnh sau khi tải ảnh lên S3 bucket, lưu ảnh sau khi sửa vào một S3 bucket mới và xoá ảnh cũ đi.
 
-#### Nội dung
+### Giới thiệu
 
- 1. [Tạo Lambda function](2-1-create-lambda-function)
- 2. [Tạo S3 bucket](2-2-create-s3-bucket/)
- 3. [Cấp quyền truy cập S3 bucket](2-3-create-policy-access-s3/)
- 4. [Kiểm tra hoạt động của Lambda](2-4-test-lambda-function/)
+Trong bài lab này, chúng ta sẽ xây dựng một giải pháp tự động xử lý ảnh sử dụng AWS Lambda với Node.js runtime. Ứng dụng sẽ tự động điều chỉnh kích thước ảnh khi được tải lên Amazon S3, lưu trữ phiên bản đã tối ưu vào một S3 bucket riêng biệt, và quản lý vòng đời của ảnh gốc.
+
+### Các bước thực hiện
+
+1. [Thiết lập AWS Lambda Function](2-1-create-lambda-function/)
+   - Tạo Lambda function với Node.js 18.x runtime
+   - Cấu hình môi trường và dependency
+   - Triển khai mã nguồn xử lý ảnh
+
+2. [Khởi tạo Amazon S3 Bucket](2-2-create-s3-bucket/)
+   - Tạo bucket nguồn cho ảnh gốc
+   - Tạo bucket đích cho ảnh đã xử lý
+   - Cấu hình policy và quyền truy cập
+
+3. [Thiết lập IAM Role và Policy](2-3-create-policy-access-s3/)
+   - Tạo IAM Role cho Lambda function
+   - Cấu hình policy cho phép truy cập S3
+   - Áp dụng các best practice về bảo mật
+
+4. [Kiểm thử và Xác thực](2-4-test-lambda-function/)
+   - Thử nghiệm quy trình xử lý ảnh
+   - Kiểm tra logs và monitoring
+   - Xác nhận kết quả tối ưu
+
+### Yêu cầu tiền quyết
+
+- Tài khoản AWS với quyền truy cập đầy đủ
+- Kiến thức cơ bản về AWS Lambda và S3
+- Hiểu biết về Node.js và xử lý ảnh
+
+### Tham khảo
+
+- [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/)
+- [Amazon S3 Developer Guide](https://docs.aws.amazon.com/s3/)
+- [AWS SDK for JavaScript](https://aws.amazon.com/sdk-for-javascript/)

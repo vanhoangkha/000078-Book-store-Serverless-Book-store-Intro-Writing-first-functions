@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/vi/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
+                />
+  </url><url>
     <loc>/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
@@ -14,16 +27,16 @@
                 href="/vi/1-introduce/"
                 />
   </url><url>
-    <loc>/vi/</loc>
+    <loc>/vi/2-resize-image-function/2-1-create-lambda-function/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/2-resize-image-function/2-1-create-lambda-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="/vi/2-resize-image-function/2-1-create-lambda-function/"
                 />
   </url><url>
     <loc>/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/</loc>
@@ -36,18 +49,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/"
-                />
-  </url><url>
-    <loc>/vi/2-resize-image-function/2-1-create-lambda-function/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-resize-image-function/2-1-create-lambda-function/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-resize-image-function/2-1-create-lambda-function/"
                 />
   </url><url>
     <loc>/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/</loc>

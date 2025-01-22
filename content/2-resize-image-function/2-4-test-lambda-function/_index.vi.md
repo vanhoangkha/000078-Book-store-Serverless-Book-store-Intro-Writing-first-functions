@@ -1,57 +1,67 @@
+
 ---
-title : "Kiểm tra hoạt động của Lambda function"
-date : "`r Sys.Date()`"
-weight : 4
-chapter : false
-pre : " <b> 2.4 </b> "
+title: "Kiểm tra hoạt động của Lambda Function"
+date: "`r Sys.Date()`"
+weight: 4
+chapter: false
+pre: " <b> 2.4 </b> "
 ---
-1. Điều hướng đến S3 bucket: **book-image-stores-by-myself**.
-    - Ấn nút **Upload**
-![S3Bucket](/images/temp/1/27.png?width=90pc)
 
-2. Ở trang **Upload**.
-    - Ấn nút **Add files**.
-    - Chọn tệp và bấm vào **Upload**.
-![S3Bucket](/images/temp/1/28.png?width=90pc)
+### Tải lên và kiểm tra ảnh trong S3 Bucket
 
-3. Đợi một lúc để Lambda function chạy, sau đó kiểm tra lại xem ảnh đã được xóa chưa.
-![S3Bucket](/images/temp/1/29.png?width=90pc)
+1. Truy cập S3 Bucket **book-image-stores-by-myself**:
+   - Nhấn vào nút **Upload** để bắt đầu quá trình tải lên
+   ![Tải lên S3](/images/temp/1/27.png?width=90pc)
 
-4. Điều hướng đến S3 bucket: **book-image-resize-stores-by-myself**.
-    - Ấn vào tệp hình ảnh.
-![S3Bucket](/images/temp/1/30.png?width=90pc)
+2. Trong giao diện **Upload**:
+   - Chọn **Add files** để thêm tệp
+   - Chọn tệp ảnh cần tải lên và nhấn **Upload**
+   ![Giao diện Upload](/images/temp/1/28.png?width=90pc)
 
-5. Ấn vào **Object URL** để tải ảnh về.
-![S3Bucket](/images/temp/1/31.png?width=90pc)
+3. Chờ Lambda Function xử lý:
+   - Sau khi tải lên, đợi Lambda Function hoàn thành xử lý
+   - Kiểm tra xem ảnh gốc đã được di chuyển
+   ![Kiểm tra xử lý](/images/temp/1/29.png?width=90pc)
 
-6. Nhưng có lỗi xảy ra - **Access Denied**.
-![S3Bucket](/images/temp/1/32.png?width=90pc)
+### Truy cập ảnh đã xử lý
 
-7. Để tải ảnh về, cần thêm chính sách cho bucket để cho phép các truy cập công cộng.
-    - Quay về bucket, chọn **Permission**.
-    - Ấn nút **Edit** ở chính sách Bucket.
-  ![S3Bucket](/images/temp/1/33.png?width=90pc)
-    - Sao chép đoạn dữ liệu json sau vào **Policy**.
-        ```
-        {
-            "Version": "2012-10-17",
-            "Statement": [
-                {
-                    "Sid": "PublicReadGetObject",
-                    "Effect": "Allow",
-                    "Principal": "*",
-                    "Action": "s3:GetObject",
-                    "Resource": "arn:aws:s3:::book-image-resize-stores-by-myself/*"
-                }
-            ]
-        }
-        ```
-    - Ấn vào **Save changes**.
-  ![S3Bucket](/images/temp/1/34.png?width=90pc)
+4. Mở S3 Bucket đích **book-image-resize-stores-by-myself**:
+   - Tìm và chọn tệp ảnh đã được xử lý
+   ![Truy cập ảnh](/images/temp/1/30.png?width=90pc)
 
-8. Sau đó, bạn hãy thực hiện lại 6 và 7 để tải ảnh về máy để so sánh với ảnh mà bạn đã tải lên. Vậy là Lambda resize function đã hoạt động bình thường.
+5. Truy cập ảnh:
+   - Nhấn vào **Object URL** để tải ảnh
+   ![Object URL](/images/temp/1/31.png?width=90pc)
 
+6. Xử lý lỗi truy cập:
+   - Bạn sẽ nhận được thông báo **Access Denied**
+   ![Lỗi truy cập](/images/temp/1/32.png?width=90pc)
 
+### Cấu hình quyền truy cập Bucket
 
+7. Thiết lập chính sách Bucket:
+   - Quay lại cấu hình Bucket, chọn tab **Permissions**
+   - Nhấn **Edit** trong phần Bucket policy
+   ![Chỉnh sửa policy](/images/temp/1/33.png?width=90pc)
+   - Thêm JSON policy sau:
+   ```json
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Sid": "PublicReadGetObject",
+               "Effect": "Allow",
+               "Principal": "*",
+               "Action": "s3:GetObject",
+               "Resource": "arn:aws:s3:::book-image-resize-stores-by-myself/*"
+           }
+       ]
+   }
+   ```
+   - Nhấn **Save changes** để lưu chính sách
+   ![Lưu policy](/images/temp/1/34.png?width=90pc)
 
-
+8. Xác nhận hoạt động:
+   - Thử lại các bước 6 và 7 để tải ảnh
+   - So sánh ảnh đã tải về với ảnh gốc để kiểm tra kết quả resize
+   - Lambda Function resize đã hoạt động thành công

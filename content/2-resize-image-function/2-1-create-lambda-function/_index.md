@@ -1,45 +1,60 @@
 ---
-title : "Create resize image Lambda function"
-date : "`r Sys.Date()`"
-weight : 1
-chapter : false
-pre : " <b> 2.1 </b> "
+title: "Creating a Lambda Function for Image Processing"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: "<b> 2.1 </b>"
 ---
-1. Open [AWS Lambda console](https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/discover), then click **Create function** button.
-![LambdaConsole](/images/temp/1/1.png?width=90pc)
 
-2. At **Create function** page.
-    - Choose **Author from scratch**.
-    - Enter function name, such as **resize-image**.
-    - Choose **Node.js 20.x** for **Runtime**.
-    - Leave as default and click **Create function** button.
-![CreateFunction](/images/temp/1/2.png?width=90pc)
+#### Creating a Lambda Function
 
-3. Download source code file to your device 
-{{%attachments title="Source code" pattern=".*\.(zip)$"/%}}
+1. Navigate to [AWS Lambda Console](https://ap-southeast-1.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/discover) and select **Create function**.
 
-4. At **resize-image** page.
-    - Click **Upload from** button.
-    - Choose **.zip file**.
-![CreateFunction](/images/temp/1/3.png?width=90pc)
+![Lambda Console Interface](/images/temp/1/1.png?width=90pc)
 
-5. At **Upload a .zip file** modal.
-    - Click **Upload** button and select the downloaded source code file.
-    - Click **Save**.
-![CreateFunction](/images/temp/1/4.png?width=90pc)
+2. On the **Create function** page:
+   - Select **Author from scratch**
+   - Name your function (e.g., **resize-image**)
+   - Choose **Node.js 20.x** as the **Runtime**
+   - Keep other settings at their defaults and click **Create function**
 
-6. At **resize-image** page.
-    - Click **Configuration** tab.
-    - Click **Environment variables** on the left menu.
-    - Click **Edit**.
-![CreateFunction](/images/temp/1/5.png?width=90pc)
+![Creating Lambda Function](/images/temp/1/2.png?width=90pc)
 
-7. At **Edit environment variables** page.
-    - Click **Add environment variable**, then add the following environment variables:
-      - **WIDTH**: enter the new width of the photo, such as 200px.
-      - **HEIGHT**: enter the new hight of the photo, such as 280px.
-      - **DES_BUCKET**: S3 bucket name to store the changed image, such as: **book-image-resize-stores-by-myself**.
-    - Then click **Save**.
-![CreateFunction](/images/temp/1/6.png?width=90pc)
+#### Configuring Source Code
 
-So we have completed the step of creating a Lambda function and configuring the environment variables for it. Next step, we will create an S3 bucket to store uploaded and edited images.
+3. Download the sample source code:
+{{% attachments title="Source code" pattern=".*\.(zip)$" /%}}
+
+4. On the **resize-image** page:
+   - Select **Upload from**
+   - Choose **.zip file**
+
+![Uploading Source Code](/images/temp/1/3.png?width=90pc)
+
+5. In the **Upload a .zip file** dialog:
+   - Click **Upload** and select your downloaded source code file
+   - Click **Save** to confirm
+
+![Confirming Upload](/images/temp/1/4.png?width=90pc)
+
+#### Setting Up the Environment
+
+6. On the **resize-image** function page:
+   - Switch to the **Configuration** tab
+   - Select **Environment variables** from the left menu
+   - Click **Edit**
+
+![Configuring Environment](/images/temp/1/5.png?width=90pc)
+
+7. On the **Edit environment variables** page:
+   - Add the following environment variables:
+     - **WIDTH**: New image width (e.g., 200px)
+     - **HEIGHT**: New image height (e.g., 280px)
+     - **DES_BUCKET**: Destination S3 bucket name (e.g., **book-image-resize-stores-by-myself**)
+   - Click **Save** to apply the configuration
+
+![Setting Environment Variables](/images/temp/1/6.png?width=90pc)
+
+#### Next Steps
+
+After completing the Lambda function configuration and environment variables setup, the next step is to create S3 buckets for storing both original and processed images.

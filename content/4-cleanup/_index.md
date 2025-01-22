@@ -5,32 +5,53 @@ weight : 4
 chapter : false
 pre : " <b> 4. </b> "
 ---
-1. Delete DynamoDB table.
-    - Open [DynamoDB console](https://ap-southeast-2.console.aws.amazon.com/dynamodbv2/home?region=ap-southeast-2#dashboard).
-    - Select **Tables** on the left menu.
-    - Select **Books** table.
-    - Click **Delete**.
-    - Enter **confirm** and click **Delete table**.
 
-2. Delete S3 bucket.
-    - Open [S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-2).
-    - Select **book-image-resize-stores-by-myself** bucket.
-    - Click **Empty**.
-    - Enter **permanently delete** and click **Empty**.
-    - Select **book-image-resize-stores-by-myself** bucket.
-    - Click **Delete**.
-    - Enter **book-image-resize-stores-by-myself** and click **Delete bucket**.
-    - Select **book-image-stores-by-myself** bucket.
-    - Click **Delete**.
-    - Enter **book-image-stores-by-myself** and click **Delete bucket**.
+#### 1. DynamoDB Cleanup
 
-3. Delete Lambda function.
-    - Open [AWS Lambda console](https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/functions).
-    - Select **book_create** function.
-    - Click **Actions**.
-    - Select **Delete**.
-    - Enter **delete** and click **Delete**.
-    - Similar to **resize_image** function.
-{{% notice note %}}
-If you continue with workshop 2 of the series, you can skip the step of deleting the Lambda function.
-{{% /notice %}}
+#### Delete DynamoDB Table
+1. Navigate to the [DynamoDB Console](https://console.aws.amazon.com/dynamodb)
+2. In the left navigation pane, select **Tables**
+3. Locate and select the **Books** table
+4. Click the **Delete** button
+5. Type `confirm` in the confirmation field
+6. Click **Delete table** to confirm
+
+
+#### 2. S3 Bucket Cleanup
+
+#### Empty and Delete First Bucket
+1. Go to the [S3 Console](https://console.aws.amazon.com/s3)
+2. Find the bucket named `book-image-resize-stores-by-myself`
+3. Click **Empty**
+4. Type `permanently delete` in the confirmation field
+5. Click **Empty** to confirm
+6. Select the same bucket again
+7. Click **Delete**
+8. Type `book-image-resize-stores-by-myself` in the confirmation field
+9. Click **Delete bucket** to confirm
+
+#### Delete Second Bucket
+1. Locate the bucket named `book-image-stores-by-myself`
+2. Click **Delete**
+3. Type `book-image-stores-by-myself` in the confirmation field
+4. Click **Delete bucket** to confirm
+
+
+
+#### 3. Lambda Function Cleanup
+
+#### Delete Lambda Functions
+1. Access the [Lambda Console](https://console.aws.amazon.com/lambda)
+2. Find and select the `book_create` function
+3. Click **Actions**
+4. Select **Delete**
+5. Type `delete` in the confirmation field
+6. Click **Delete** to confirm
+7. Repeat the same steps for the `resize_image` function
+
+
+
+> **Note:** If you plan to continue with Workshop 2 in this series, you may skip the Lambda function deletion step.
+
+#### Next Steps
+After completing these cleanup steps, verify in each service console that the resources have been successfully deleted. This helps prevent any unexpected charges on your AWS account.

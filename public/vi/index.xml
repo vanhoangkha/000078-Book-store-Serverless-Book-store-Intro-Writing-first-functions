@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Serverless - Lambda tương tác với S3 và DynamoDB on AWS System Manager</title>
+    <title>Serverless - Tương tác giữa Lambda với S3 và DynamoDB on AWS System Manager</title>
     <link>/vi/</link>
-    <description>Recent content in Serverless - Lambda tương tác với S3 và DynamoDB on AWS System Manager</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <atom:link href="/vi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Serverless - Tương tác giữa Lambda với S3 và DynamoDB on AWS System Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/vi/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

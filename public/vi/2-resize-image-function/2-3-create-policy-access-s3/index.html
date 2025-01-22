@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.140.2">
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo Policy cho Lambda function :: AWS System Manager</title>
+    <title>Tạo IAM Policy cho Lambda Function :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1737533814" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1737533814" rel="stylesheet">
-    <link href="/css/hybrid.css?1737533814" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1737533814" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1737533814" rel="stylesheet">
-    <link href="/css/auto-complete.css?1737533814" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1737533814" rel="stylesheet">
-    <link href="/css/theme.css?1737533814" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1737533814" rel="stylesheet">
+    <link href="/css/nucleus.css?1737536555" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1737536555" rel="stylesheet">
+    <link href="/css/hybrid.css?1737536555" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1737536555" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1737536555" rel="stylesheet">
+    <link href="/css/auto-complete.css?1737536555" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1737536555" rel="stylesheet">
+    <link href="/css/theme.css?1737536555" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1737536555" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1737533814" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1737536555" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1737533814"></script>
+    <script src="/js/jquery-3.3.1.min.js?1737536555"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -79,14 +79,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1737533814"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1737533814"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1737536555"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1737536555"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1737533814"></script>
+<script type="text/javascript" src="/js/search.js?1737536555"></script>
 
     
   </div>
@@ -104,13 +104,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/">
-           <b> 1. </b> Giới thiệu
+           <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -130,13 +130,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/" title="Thay đổi kích thước ảnh" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/" title="Xử lý và Tối ưu Kích thước Ảnh trên AWS" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/2-resize-image-function/">
-           <b> 2. </b> Thay đổi kích thước ảnh
+          <b> 2. </b>Xử lý và Tối ưu Kích thước Ảnh trên AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -161,13 +161,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-1-create-lambda-function/" title="Tạo Lambda function chỉnh ảnh" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-1-create-lambda-function/" title="Tạo Lambda Function Xử Lý Ảnh" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-1-create-lambda-function/">
-           <b> 2.1 </b> Tạo Lambda function chỉnh ảnh
+          <b> 2.1 </b>Tạo Lambda Function Xử Lý Ảnh
           
             <i class="fas fa-check read-icon"></i>
           
@@ -189,13 +189,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 bucket" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 Bucket" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-2-create-s3-bucket/">
-           <b> 2.2 </b> Tạo S3 bucket
+           <b> 2.2 </b> Tạo S3 Bucket
           
             <i class="fas fa-check read-icon"></i>
           
@@ -217,13 +217,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-3-create-policy-access-s3/" title="Tạo Policy cho Lambda function" class="dd-item 
-        
+    <li data-nav-id="/vi/2-resize-image-function/2-3-create-policy-access-s3/" title="Tạo IAM Policy cho Lambda Function" class="dd-item 
+        parent
         active
         
         ">
       <a href="/vi/2-resize-image-function/2-3-create-policy-access-s3/">
-           <b> 2.3 </b> Tạo Policy cho Lambda function
+           <b> 2.3 </b> Tạo IAM Policy cho Lambda Function
           
             <i class="fas fa-check read-icon"></i>
           
@@ -245,13 +245,13 @@
  
   
     
-    <li data-nav-id="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda function" class="dd-item 
+    <li data-nav-id="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda Function" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-resize-image-function/2-4-test-lambda-function/">
-           <b> 2.4 </b> Kiểm tra hoạt động của Lambda function
+           <b> 2.4 </b> Kiểm tra hoạt động của Lambda Function
           
             <i class="fas fa-check read-icon"></i>
           
@@ -280,13 +280,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/" title="Ghi dữ liệu vào DynamoDB" class="dd-item 
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/" title="Ghi dữ liệu vào Amazon DynamoDB" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/">
-           <b> 3. </b> Ghi dữ liệu vào DynamoDB
+           <b> 3. </b> Ghi dữ liệu vào Amazon DynamoDB
           
             <i class="fas fa-check read-icon"></i>
           
@@ -311,13 +311,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo bảng trong AWS DynamoDB" class="dd-item 
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/" title="Tạo và Quản lý Bảng trong AWS DynamoDB" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/">
-           <b> 3.1 </b> Tạo bảng trong AWS DynamoDB
+          <b> 3.1 </b>Tạo và Quản lý Bảng trong AWS DynamoDB
           
             <i class="fas fa-check read-icon"></i>
           
@@ -339,13 +339,13 @@
  
   
     
-    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/" title="Ghi dữ liệu với Lambda function" class="dd-item 
+    <li data-nav-id="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/" title="Tạo Lambda Function để Ghi dữ liệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/">
-           <b> 3.2 </b> Ghi dữ liệu với Lambda function
+          <b> 3.2 </b>Tạo Lambda Function để Ghi dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -482,7 +482,7 @@
   <br>
   <b> Last Updated </b> <br>
   <i>
-    <font color=orange>04-12-2024</font>
+    <font color=orange>22-01-2025</font>
   </i>
 </left>
 <left>
@@ -492,6 +492,7 @@
 
   <i> <a href="https://www.linkedin.com/in/jotaguy" style="color:orange">Gia Hưng </a> <br>
     <a href="https://www.linkedin.com/in/hạnh-phạm-725b7322a/" style="color:orange">Hạnh Phạm </a> <br>
+    <a href="https://www.linkedin.com/in/chaunguyenctn/" style="color:orange">Châu Nguyễn </a> <br>
 
   </i>
 </left>
@@ -535,7 +536,7 @@
             
           
           
-            <a href='/vi/'>Serverless - Lambda tương tác với S3 và DynamoDB</a> > <a href='/vi/2-resize-image-function/'>Thay đổi kích thước ảnh</a> > Tạo Policy cho Lambda function
+            <a href='/vi/'>Serverless - Tương tác giữa Lambda với S3 và DynamoDB</a> > <a href='/vi/2-resize-image-function/'>Xử lý và Tối ưu Kích thước Ảnh trên AWS</a> > Tạo IAM Policy cho Lambda Function
           
         
           
@@ -548,7 +549,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tạo-iam-policy">Tạo IAM Policy</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -564,7 +573,7 @@
           
             <h1>
               
-              Tạo Policy cho Lambda function
+              Tạo IAM Policy cho Lambda Function
             </h1>
           
 
@@ -572,79 +581,104 @@
 
 
 
-	<p>Trong bước này chúng ta sẽ tạo Policy cấp quyền cho Lambda function có thể lấy, ghi và xoá object trong S3 bucket.</p>
+	<p>Trong phần này, chúng ta sẽ tạo IAM Policy để cấp quyền cho Lambda Function thực hiện các thao tác với objects trong S3 bucket.</p>
+<h3 id="tạo-iam-policy">Tạo IAM Policy</h3>
 <ol>
 <li>
-<p>Ở trang <strong>resize-image</strong>.</p>
+<p>Truy cập vào Lambda Function <strong>resize-image</strong></p>
 <ul>
-<li>Ấn vào tab <strong>Configuration</strong>.</li>
-<li>Ấn vào <strong>Permissions</strong>.</li>
-<li>Ấn vào role mà function đang thực hiện.
+<li>Chuyển đến tab <strong>Configuration</strong></li>
+<li>Chọn mục <strong>Permissions</strong></li>
+<li>Click vào role đang được gắn với function
 <img src="/images/temp/1/16.png?width=90pc" alt="CreatePolicy"></li>
 </ul>
 </li>
 <li>
-<p>Ở trang <strong>resize-image-role-&hellip;</strong>.</p>
+<p>Tại trang IAM Role <strong>resize-image-role-&hellip;</strong></p>
 <ul>
-<li>Ấn nút <strong>Add permissions</strong>.</li>
-<li>Chọn <strong>Create inline policy</strong>.
+<li>Click <strong>Add permissions</strong></li>
+<li>Chọn <strong>Create inline policy</strong>
 <img src="/images/temp/1/17.png?width=90pc" alt="CreatePolicy"></li>
 </ul>
 </li>
 <li>
-<p>Ở trang <strong>Step 1: Specify permissions</strong>.</p>
+<p>Tại trang <strong>Create policy</strong></p>
 <ul>
-<li>Ấn vào <strong>Choose a service</strong> and nhập <strong>S3</strong>.</li>
-<li>Chọn <strong>S3</strong>.
-<img src="/images/temp/1/18.png?width=90pc" alt="CreatePolicy"></li>
-<li>Nhập <strong>GetObject</strong> ở ô Tìm kiếm.</li>
-<li>Chọn <strong>GetObject</strong> ở cấp <strong>Read</strong>.
-<img src="/images/temp/1/19.png?width=90pc" alt="CreatePolicy"></li>
-<li>Xóa ô tìm kiếm và nhập <strong>DeleteObject</strong>.</li>
-<li>Chọn <strong>DeleteObject</strong> ở cấp <strong>Write</strong>.</li>
-<li>Ấn vào <strong>Add ARNs</strong>.
-<img src="/images/temp/1/20.png?width=90pc" alt="CreatePolicy"></li>
-<li>Ở hộp thoại <strong>Specify ARNs</strong>.
+<li>
+<p>Click <strong>Choose a service</strong> và tìm kiếm <strong>S3</strong></p>
+</li>
+<li>
+<p>Chọn dịch vụ <strong>S3</strong>
+<img src="/images/temp/1/18.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+<li>
+<p>Tại ô tìm kiếm, nhập <strong>GetObject</strong></p>
+</li>
+<li>
+<p>Tích chọn quyền <strong>GetObject</strong> trong nhóm <strong>Read</strong>
+<img src="/images/temp/1/19.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+<li>
+<p>Xóa từ khóa tìm kiếm và nhập <strong>DeleteObject</strong></p>
+</li>
+<li>
+<p>Tích chọn quyền <strong>DeleteObject</strong> trong nhóm <strong>Write</strong></p>
+</li>
+<li>
+<p>Click <strong>Add ARNs</strong>
+<img src="/images/temp/1/20.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+<li>
+<p>Trong hộp thoại <strong>Specify ARNs</strong></p>
 <ul>
-<li>Nhập <strong>book-image-stores-by-myself</strong> ở <strong>Resource bucket name</strong>.</li>
-<li>Nhập <strong>*</strong> at <strong>Resource object name</strong>.</li>
-<li>Ấn vào nút <strong>Add ARNs</strong>.
+<li>Điền <strong>book-image-stores-by-myself</strong> vào trường <strong>Resource bucket name</strong></li>
+<li>Nhập <strong>*</strong> vào trường <strong>Resource object name</strong></li>
+<li>Click <strong>Add ARNs</strong>
 <img src="/images/temp/1/21.png?width=90pc" alt="CreatePolicy"></li>
 </ul>
 </li>
-<li>Ấn vào <strong>+ Add more permissions</strong>.</li>
-<li>Ấn vào <strong>Choose a service</strong> và nhập <strong>S3</strong>.</li>
-<li>Chọn <strong>S3</strong>.
-<img src="/images/temp/1/22.png?width=90pc" alt="CreatePolicy"></li>
-<li>Nhập <strong>PutObject</strong>.</li>
-<li>Chọn <strong>PutObject</strong> ở cấp <strong>Write</strong>.</li>
-<li>Ấn vào <strong>Add ARNs</strong>.
-<img src="/images/temp/1/23.png?width=90pc" alt="CreatePolicy"></li>
-<li>Ở hộp thoại <strong>Specify ARNs</strong>.
-<ul>
-<li>Nhập <strong>book-image-resize-stores-by-myself</strong> ở <strong>Resource bucket name</strong>.</li>
-<li>Nhập <strong>*</strong> ở <strong>Resource object name</strong>.</li>
-<li>Ấn vào nút <strong>Add ARNs</strong>.</li>
-</ul>
+<li>
+<p>Click <strong>+ Add more permissions</strong></p>
 </li>
-<li>Sau khi hộp thoại đóng, ấn vào <strong>Next</strong>.
-<img src="/images/temp/1/24.png?width=90pc" alt="CreatePolicy"></li>
+<li>
+<p>Chọn lại service <strong>S3</strong>
+<img src="/images/temp/1/22.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+<li>
+<p>Tìm và chọn quyền <strong>PutObject</strong> trong nhóm <strong>Write</strong></p>
+</li>
+<li>
+<p>Click <strong>Add ARNs</strong>
+<img src="/images/temp/1/23.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+<li>
+<p>Trong hộp thoại <strong>Specify ARNs</strong></p>
+<ul>
+<li>Điền <strong>book-image-resize-stores-by-myself</strong> vào trường <strong>Resource bucket name</strong></li>
+<li>Nhập <strong>*</strong> vào trường <strong>Resource object name</strong></li>
+<li>Click <strong>Add ARNs</strong></li>
 </ul>
 </li>
 <li>
-<p>Ở trang <strong>Step 2: Review and create</strong>.</p>
+<p>Click <strong>Next</strong>
+<img src="/images/temp/1/24.png?width=90pc" alt="CreatePolicy"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tại trang <strong>Review policy</strong></p>
 <ul>
-<li>Nhập tên chính sách, ví dụ: <strong>LambdaResizeImageS3Policy</strong>.</li>
-<li>Kiểm tra lại thông tin chính sách và ấn vào <strong>Create policy</strong>.
+<li>Đặt tên policy là <strong>LambdaResizeImageS3Policy</strong></li>
+<li>Xem lại cấu hình policy và click <strong>Create policy</strong>
 <img src="/images/temp/1/25.png?width=90pc" alt="CreatePolicy"></li>
 </ul>
 </li>
 <li>
-<p>Kiểm tra lại các chính sách đã tạo ra.
+<p>Kiểm tra policy vừa được tạo trong danh sách
 <img src="/images/temp/1/26.png?width=90pc" alt="CreatePolicy"></p>
 </li>
 </ol>
-<p>Chúng ta đã hoàn thành cấp quyền đọc, ghi và xoá object trong S3 bucket cho Lambda function. Bước tiếp theo là kiểm tra hoạt động của Lambda fucntion khi tải lên một ảnh.</p>
+<p>Đến đây, chúng ta đã hoàn tất việc cấp quyền cho Lambda Function để thao tác với objects trong S3 bucket. Bước tiếp theo, chúng ta sẽ kiểm tra chức năng của Lambda Function bằng cách upload một file ảnh test.</p>
 
 
 
@@ -864,10 +898,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 bucket"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-resize-image-function/2-2-create-s3-bucket/" title="Tạo S3 Bucket"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda function" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/2-resize-image-function/2-4-test-lambda-function/" title="Kiểm tra hoạt động của Lambda Function" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -877,19 +911,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1737533814"></script>
-    <script src="/js/perfect-scrollbar.min.js?1737533814"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1737533814"></script>
-    <script src="/js/jquery.sticky.js?1737533814"></script>
-    <script src="/js/featherlight.min.js?1737533814"></script>
-    <script src="/js/highlight.pack.js?1737533814"></script>
+    <script src="/js/clipboard.min.js?1737536555"></script>
+    <script src="/js/perfect-scrollbar.min.js?1737536555"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1737536555"></script>
+    <script src="/js/jquery.sticky.js?1737536555"></script>
+    <script src="/js/featherlight.min.js?1737536555"></script>
+    <script src="/js/highlight.pack.js?1737536555"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1737533814"></script>
-    <script src="/js/learn.js?1737533814"></script>
-    <script src="/js/hugo-learn.js?1737533814"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1737536555"></script>
+    <script src="/js/learn.js?1737536555"></script>
+    <script src="/js/hugo-learn.js?1737536555"></script>
 
-    <link href="/mermaid/mermaid.css?1737533814" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1737533814"></script>
+    <link href="/mermaid/mermaid.css?1737536555" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1737536555"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -2,19 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-  </url><url>
     <loc>/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -24,6 +13,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="/3-write-data-to-dynaomodb/3-1-create-dynamodb-table/"
+                />
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
                 />
   </url><url>
     <loc>/2-resize-image-function/2-1-create-lambda-function/</loc>
@@ -86,6 +88,19 @@
                 href="/3-write-data-to-dynaomodb/3-2-write-data-by-lambda/"
                 />
   </url><url>
+    <loc>/3-write-data-to-dynaomodb/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-write-data-to-dynaomodb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-write-data-to-dynaomodb/"
+                />
+  </url><url>
     <loc>/2-resize-image-function/2-3-create-policy-access-s3/</loc>
     <xhtml:link
                 rel="alternate"
@@ -96,18 +111,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/2-resize-image-function/2-3-create-policy-access-s3/"
-                />
-  </url><url>
-    <loc>/3-write-data-to-dynaomodb/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-write-data-to-dynaomodb/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-write-data-to-dynaomodb/"
                 />
   </url><url>
     <loc>/4-cleanup/</loc>

@@ -1,105 +1,121 @@
 ---
-title : "Ghi dữ liệu với Lambda function"
-date :  "`r Sys.Date()`" 
-weight : 2
-chapter : false
-pre : " <b> 3.2 </b> "
+title: "Tạo Lambda Function để Ghi dữ liệu"
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: "<b> 3.2 </b>"
 ---
-1. Mở bảng điều khiển [AWS Lambda](https://ap-southeast-2.console.aws.amazon.com/lambda/home?region=ap-southeast-2#/discover). 
-    - Nhấn vào **Functions**.
-    - Nhấn vào **Create function**.
-![LambdaConsole](/images/temp/1/39.png?width=90pc)
 
-2. Ở trang **Create function**.
-    - Chọn **Author from scratch**.
-    - Nhập tên function: **book_create**.
-    - Chọn **Python 3.11** cho **Runtime**
-    - Nhấn vào **Create function**.
-![LambdaConsole](/images/temp/1/40.png?width=90pc)
+### Tạo Lambda Function mới
 
-3. Ở trang **book_create**.
-    - Sao chép đoạn code sau vào tab **lambda_function**.
-      ```
-      import boto3
-      import json
+1. Truy cập [AWS Lambda Console](https://console.aws.amazon.com/lambda)
+   - Chọn **Functions** từ thanh điều hướng bên trái
+   - Nhấn nút **Create function**
 
-      client = boto3.resource('dynamodb')
-          
-      def lambda_handler(event, context):
-          
-          book_item = event["body"]
-          error = None
-          try:
-              table = client.Table('Books')
-              table.put_item(Item = book_item)
-          except Exception as e:
-              error = e
-              
-          if error is None:
-              response = {
-                  'statusCode': 200,
-                  'body': 'writing to dynamoDB successfully!',
-                  'headers': {
-                      'Content-Type': 'application/json'
-                  },
-              }
-          else:
-              response = {
-                  'statusCode': 400,
-                  'body': 'writing to dynamoDB fail!',
-                  'headers': {
-                      'Content-Type': 'application/json'
-                  },
-              }
-      
-          return response
-      ```
+![Tạo Lambda Function](/images/temp/1/39.png)
 
-    - Nhấn **Deploy**.
-![LambdaConsole](/images/temp/1/41.png?width=90pc)
+2. Trong trang **Create function**:
+   - Chọn **Author from scratch** 
+   - Đặt tên function: **book_create**
+   - Chọn **Python 3.11** làm Runtime
+   - Nhấn **Create function**
 
-4. Tiếp theo, thêm những quyền cần thiết để Lambda function kết nối đến được DynamoDB.
-    - Nhấn vào tab **Configure**.
-    - Nhấn vào **Permissions** ở menu bên trái.
-    - Nhấn vào role ứng với function.
-  ![LambdaConsole](/images/temp/1/42.png?width=90pc)
-    - Nhấn vào **Attach permissions**.
-    - Chọn **Attach policies**.
-  ![LambdaConsole](/images/temp/1/43.png?width=90pc)
-    - Nhập **AmazonDynamoDBFullAccess** ở ô tìm kiếm chính sách.
-    - Chọn chính sách **AmazonDynamoDBFullAccess**.
-    - Nhấn vào **Add permission**.
-  ![LambdaConsole](/images/temp/1/44.png?width=90pc)
+![Cấu hình Lambda Function](/images/temp/1/40.png)
 
-5. Tạo một sự kiện để kiểm tra function có hoạt động không. Ở trang **book_create**.
-    - Nhấn vào tab **Test**.
-    - Nhập tên sự kiện, ví dụ: **test_1**.
-    - Nhập dữ liệu sau vào **Event JSON**.
-        ```
-        {
-          "body": {
-              "id": "1",
-              "name": "Java",
-              "author": "Alex",
-              "category": "IT",
-              "price": "10.89",
-              "description": "This book guide to create Java web basic",
-              "image": "https://book-image-resize-store.s3.us-east-1.amazonaws.com/Java.jpg"
-          }
+### Cấu hình Function
+
+3. Trong giao diện function **book_create**:
+   - Paste code sau vào editor **lambda_function.py**:
+
+```python
+import boto3
+import json
+
+client = boto3.resource('dynamodb')
+    
+def lambda_handler(event, context):
+    book_item = event["body"]
+    error = None
+    
+    try:
+        table = client.Table('Books')
+        table.put_item(Item = book_item)
+    except Exception as e:
+        error = e
+        
+    if error is None:
+        response = {
+            'statusCode': 200,
+            'body': 'Ghi dữ liệu vào DynamoDB thành công!',
+            'headers': {
+                'Content-Type': 'application/json'
+            },
         }
-        ```
-    - Nhấn vào **Save**.
-    - Nhấn vào **Test**.
-![LambdaConsole](/images/temp/1/45.png?width=90pc)
+    else:
+        response = {
+            'statusCode': 400,
+            'body': 'Ghi dữ liệu vào DynamoDB thất bại!',
+            'headers': {
+                'Content-Type': 'application/json'
+            },
+        }
 
-6. Điều hướng đến cửa sổ **DynamoDB Tables**.
-    - Chọn **Books Tables**. 
-    - Nhấn vào **Actions**. 
-    - Nhấn vào **Update settings**
-![LambdaConsole](/images/temp/1/46.png?width=90pc)
+    return response
+```
 
-7. Nhấn vào **Explore table items**.
-![LambdaConsole](/images/temp/1/47.png?width=90pc)
+   - Nhấn **Deploy** để lưu thay đổi
 
-8. Bạn sẽ lấy được toàn bộ dữ liệu từ bảng.
-![LambdaConsole](/images/temp/1/48.png?width=90pc)
+![Cấu hình Code](/images/temp/1/41.png)
+
+### Cấu hình IAM Permissions
+
+4. Thêm quyền truy cập DynamoDB:
+   - Chọn tab **Configuration**
+   - Chọn **Permissions** từ menu trái
+   - Nhấn vào role của function
+
+![Cấu hình IAM](/images/temp/1/42.png)
+
+5. Trong trang IAM Role:
+   - Chọn **Attach policies**
+   - Tìm và chọn policy **AmazonDynamoDBFullAccess**
+   - Nhấn **Add permissions**
+
+![Thêm Policy](/images/temp/1/43.png)
+
+### Kiểm tra Function
+
+6. Tạo test event:
+   - Chọn tab **Test**
+   - Đặt tên event: **test_1** 
+   - Nhập JSON test sau:
+
+```json
+{
+  "body": {
+      "id": "1",
+      "name": "Java Programming",
+      "author": "Alex Smith",
+      "category": "Technology",
+      "price": "10.89",
+      "description": "Hướng dẫn lập trình Java cơ bản",
+      "image": "https://book-image-resize-store.s3.amazonaws.com/Java.jpg"
+  }
+}
+```
+
+   - Nhấn **Save** và **Test**
+
+![Test Function](/images/temp/1/45.png)
+
+### Xác nhận dữ liệu trong DynamoDB
+
+7. Truy cập DynamoDB Console:
+   - Chọn bảng **Books**
+   - Chọn **Explore table items**
+
+![Xem DynamoDB](/images/temp/1/47.png)
+
+8. Kiểm tra dữ liệu đã được thêm vào:
+
+![Kết quả](/images/temp/1/48.png)
